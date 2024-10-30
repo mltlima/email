@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Confirmação de Cancelamento</title>
+    <title>Cancelamento de Comissão - Embaixador</title>
     <style>
         * {
             box-sizing: border-box;
@@ -56,55 +56,87 @@
 
         <!-- Imagem Principal com Card sobreposto -->
         <div style="position: relative; width: 100%;">
-            <img class="banner-image" src="https://modulescomposer.s3.us-east-2.amazonaws.com/simpli/header-3.jpg"
+            <img class="banner-image" src="https://modulescomposer.s3.us-east-2.amazonaws.com/simpli/header-15.jpg"
                 alt="Banner" style="width: 100%; display: block; border-radius: 20px;">
 
             <!-- Card sobreposto -->
             <div class="card"
                 style="position: relative; margin: -60px 20px 0 20px; background: white; border-radius: 20px; padding: 30px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-
-                <!-- Cabeçalho -->
-                <p style="color: #05314a; margin-bottom: 10px; font-weight: bold;">Olá {{brand_name}},</p>
+                <p style="color: #05314a; margin-bottom: 10px; font-weight: bold; text-align: center;">Olá
+                    {{ambassador_name}},</p>
                 <h1 class="main-title" style="color: #333; font-size: 24px; margin: 0 0 20px 0; text-align: center;">
-                    Confirmamos o cancelamento da campanha conforme solicitado.
+                    Uma venda realizada através da sua indicação foi cancelada.
                 </h1>
 
                 <!-- Detalhes do Cancelamento -->
-                <div style="background-color: #f8f8f8; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
-                    <h2 style="color: #ff714d; font-size: 18px; margin-bottom: 15px;">DETALHES DA CAMPANHA CANCELADA:
-                    </h2>
-                    <div style="color: #666;">
-                        <p style="margin-bottom: 8px;">• ID: {{campaign_id}}</p>
-                        <p style="margin-bottom: 8px;">• Influencer: {{influencer_name}}</p>
-                        <p style="margin-bottom: 8px;">• Valor: R$ {{campaign_value}}</p>
-                        <p style="margin-bottom: 8px;">• Data do cancelamento: {{cancellation_date}}</p>
-                        <p style="margin-bottom: 8px;">• Motivo: {{cancellation_reason}}</p>
+                <div style="margin: 30px 0; background-color: #fff3cd; padding: 20px; border-radius: 10px;">
+                    <h2 style="color: #333; font-size: 18px; margin-bottom: 15px;">DETALHES DO CANCELAMENTO:</h2>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: #666; margin-bottom: 10px;">• Marca/Influencer: {{seller_name}}</li>
+                        <li style="color: #666; margin-bottom: 10px;">• Produto: {{product_name}}</li>
+                        <li style="color: #666; margin-bottom: 10px;">• Valor da venda: R$ {{sale_value}}</li>
+                        <li style="color: #666; margin-bottom: 10px;">• Data do cancelamento: {{cancellation_date}}</li>
+                    </ul>
+                </div>
+
+                <!-- Impacto na Comissão -->
+                <div style="margin: 30px 0; background-color: #f8f9fa; padding: 20px; border-radius: 10px;">
+                    <h2 style="color: #333; font-size: 18px; margin-bottom: 15px;">IMPACTO NA SUA COMISSÃO:</h2>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: #666; margin-bottom: 10px;">• Comissão cancelada: R$ {{commission_value}}</li>
+                        <li style="color: #666; margin-bottom: 10px;">• Ajuste na carteira digital: -R$
+                            {{commission_value}}</li>
+                        <li style="color: #666; margin-bottom: 10px;">• Novo saldo: R$ {{new_balance}}</li>
+                    </ul>
+                </div>
+
+                <!-- Motivo -->
+                <div style="margin: 30px 0; padding: 20px; border: 1px solid #ddd; border-radius: 10px;">
+                    <h2 style="color: #333; font-size: 18px; margin-bottom: 15px;">MOTIVO:</h2>
+                    <p style="color: #666;">{{cancellation_reason}}</p>
+                </div>
+
+                <!-- Aviso Importante -->
+                <div style="margin: 30px 0; background-color: #fff3cd; padding: 20px; border-radius: 10px;">
+                    <h2 style="color: #333; font-size: 18px; margin-bottom: 15px;">⚠️ IMPORTANTE:</h2>
+                    <p style="color: #666;">Conforme nossos termos, comissões de vendas canceladas são estornadas
+                        automaticamente
+                        da carteira digital.</p>
+                </div>
+
+                <!-- Carteira Digital Atualizada -->
+                <div style="margin: 30px 0; background-color: #f8f9fa; padding: 20px; border-radius: 10px;">
+                    <h2 style="color: #333; font-size: 18px; margin-bottom: 15px;">CARTEIRA DIGITAL ATUALIZADA:</h2>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: #666; margin-bottom: 10px;">• Saldo atual: R$ {{wallet_balance}}</li>
+                        <li style="color: #666; margin-bottom: 10px;">• Comissões pendentes: R$ {{pending_commissions}}
+                        </li>
+                    </ul>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <a href="#"
+                            style="background-color: #05314a; color: white; padding: 15px 40px; border-radius: 25px; text-decoration: none; display: inline-block;">
+                            Acessar Carteira
+                        </a>
                     </div>
                 </div>
 
-                <!-- Informações do Reembolso -->
-                <div style="margin: 20px 0; background-color: #f0f9ff; padding: 20px; border-radius: 10px;">
-                    <h2 style="color: #05314a; font-size: 18px; margin-bottom: 15px;">SOBRE O REEMBOLSO:</h2>
-                    <div style="color: #666;">
-                        <p style="margin-bottom: 8px;">• Valor a ser reembolsado: R$ {{refund_amount}}</p>
-                        <p style="margin-bottom: 8px;">• Método: {{refund_method}}</p>
-                        <p style="margin-bottom: 8px;">• Prazo: {{refund_date}}</p>
-                    </div>
-                </div>
-
-                <!-- Nova Campanha -->
-                <div style="text-align: center; margin: 30px 0;">
-                    <p style="color: #666; margin-bottom: 20px;">Para iniciar uma nova campanha:</p>
+                <!-- Mensagem de Incentivo -->
+                <div
+                    style="text-align: center; margin: 30px 0; padding: 20px; background-color: #f8f9fa; border-radius: 10px;">
+                    <p style="color: #333; font-size: 18px; margin-bottom: 15px;">Continue indicando!</p>
+                    <p style="color: #666; margin-bottom: 20px;">Novas vendas geram novas comissões.</p>
                     <a href="#"
                         style="background-color: #ff714d; color: white; padding: 15px 40px; border-radius: 25px; text-decoration: none; display: inline-block;">
-                        Criar Nova Campanha
+                        Fazer Novas Indicações
                     </a>
                 </div>
 
-                <!-- Mensagem Final -->
-                <div style="text-align: center; margin-top: 30px; color: #666;">
-                    <p style="margin-bottom: 15px;">Esperamos vê-lo(a) em breve em uma nova campanha!</p>
-                    <p style="font-weight: bold;">Equipe Lovelike</p>
+                <!-- Assinatura e Suporte -->
+                <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
+                    <p style="color: #666; margin-bottom: 20px;">Atenciosamente,<br>Equipe Lovelike</p>
+                    <p style="color: #666; font-size: 14px;">Para dúvidas sobre comissões:<br>
+                        <a href="{{support_link}}" style="color: #05314a; text-decoration: none;">{{support_link}}</a>
+                    </p>
                 </div>
             </div>
         </div>

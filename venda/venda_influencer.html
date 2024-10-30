@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Confirmação de Cancelamento</title>
+    <title>Relatório de Comissões</title>
     <style>
         * {
             box-sizing: border-box;
@@ -56,55 +56,57 @@
 
         <!-- Imagem Principal com Card sobreposto -->
         <div style="position: relative; width: 100%;">
-            <img class="banner-image" src="https://modulescomposer.s3.us-east-2.amazonaws.com/simpli/header-3.jpg"
+            <img class="banner-image" src="https://modulescomposer.s3.us-east-2.amazonaws.com/simpli/header-15.jpg"
                 alt="Banner" style="width: 100%; display: block; border-radius: 20px;">
 
             <!-- Card sobreposto -->
             <div class="card"
                 style="position: relative; margin: -60px 20px 0 20px; background: white; border-radius: 20px; padding: 30px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-
-                <!-- Cabeçalho -->
-                <p style="color: #05314a; margin-bottom: 10px; font-weight: bold;">Olá {{brand_name}},</p>
+                <p style="color: #05314a; margin-bottom: 10px; font-weight: bold; text-align: center;">Olá
+                    {{influencer_name}},</p>
                 <h1 class="main-title" style="color: #333; font-size: 24px; margin: 0 0 20px 0; text-align: center;">
-                    Confirmamos o cancelamento da campanha conforme solicitado.
+                    Parabéns! Suas indicações geraram vendas no Lovelike Shop.
                 </h1>
 
-                <!-- Detalhes do Cancelamento -->
-                <div style="background-color: #f8f8f8; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
-                    <h2 style="color: #ff714d; font-size: 18px; margin-bottom: 15px;">DETALHES DA CAMPANHA CANCELADA:
-                    </h2>
-                    <div style="color: #666;">
-                        <p style="margin-bottom: 8px;">• ID: {{campaign_id}}</p>
-                        <p style="margin-bottom: 8px;">• Influencer: {{influencer_name}}</p>
-                        <p style="margin-bottom: 8px;">• Valor: R$ {{campaign_value}}</p>
-                        <p style="margin-bottom: 8px;">• Data do cancelamento: {{cancellation_date}}</p>
-                        <p style="margin-bottom: 8px;">• Motivo: {{cancellation_reason}}</p>
-                    </div>
+                <!-- Detalhes das Vendas -->
+                <div style="margin: 30px 0;">
+                    <h2 style="color: #333; font-size: 18px; margin-bottom: 15px;">DETALHES DAS VENDAS:</h2>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: #666; margin-bottom: 10px;">• Produto: {{product_name}}</li>
+                        <li style="color: #666; margin-bottom: 10px;">• Marca: {{brand_name}}</li>
+                        <li style="color: #666; margin-bottom: 10px;">• Quantidade vendida: {{quantity}}</li>
+                        <li style="color: #666; margin-bottom: 10px;">• Valor total das vendas: R$ {{sales_value}}</li>
+                    </ul>
                 </div>
 
-                <!-- Informações do Reembolso -->
-                <div style="margin: 20px 0; background-color: #f0f9ff; padding: 20px; border-radius: 10px;">
-                    <h2 style="color: #05314a; font-size: 18px; margin-bottom: 15px;">SOBRE O REEMBOLSO:</h2>
-                    <div style="color: #666;">
-                        <p style="margin-bottom: 8px;">• Valor a ser reembolsado: R$ {{refund_amount}}</p>
-                        <p style="margin-bottom: 8px;">• Método: {{refund_method}}</p>
-                        <p style="margin-bottom: 8px;">• Prazo: {{refund_date}}</p>
-                    </div>
+                <!-- Comissão -->
+                <div style="margin: 30px 0;">
+                    <h2 style="color: #333; font-size: 18px; margin-bottom: 15px;">SUA COMISSÃO:</h2>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: #666; margin-bottom: 10px;">• Percentual: {{commission_percentage}}%</li>
+                        <li style="color: #666; margin-bottom: 10px;">• Valor a receber: R$ {{commission_value}}</li>
+                        <li style="color: #666; margin-bottom: 10px;">• Status: Em processamento</li>
+                        <li style="color: #666; margin-bottom: 10px;">• Previsão de pagamento: {{payment_date}}</li>
+                    </ul>
                 </div>
 
-                <!-- Nova Campanha -->
+                <!-- Métricas -->
+                <div style="margin: 30px 0;">
+                    <h2 style="color: #333; font-size: 18px; margin-bottom: 15px;">MÉTRICAS:</h2>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: #666; margin-bottom: 10px;">• Cliques no seu link: {{clicks}}</li>
+                        <li style="color: #666; margin-bottom: 10px;">• Taxa de conversão: {{conversion_rate}}%</li>
+                        <li style="color: #666; margin-bottom: 10px;">• Total de vendas no mês: R$ {{monthly_sales}}
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botão Ver Relatório -->
                 <div style="text-align: center; margin: 30px 0;">
-                    <p style="color: #666; margin-bottom: 20px;">Para iniciar uma nova campanha:</p>
                     <a href="#"
                         style="background-color: #ff714d; color: white; padding: 15px 40px; border-radius: 25px; text-decoration: none; display: inline-block;">
-                        Criar Nova Campanha
+                        Ver Relatório Completo
                     </a>
-                </div>
-
-                <!-- Mensagem Final -->
-                <div style="text-align: center; margin-top: 30px; color: #666;">
-                    <p style="margin-bottom: 15px;">Esperamos vê-lo(a) em breve em uma nova campanha!</p>
-                    <p style="font-weight: bold;">Equipe Lovelike</p>
                 </div>
             </div>
         </div>
