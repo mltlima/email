@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Solicitação de Troca</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .main-title {
+                font-size: 20px !important;
+                padding: 0 10px !important;
+            }
+
+            .card {
+                margin: -40px 10px 0 10px !important;
+                padding: 15px !important;
+                width: auto !important;
+            }
+
+            .banner-image {
+                border-radius: 0 !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="max-width: 600px; margin: 0 auto; overflow-x: hidden;">
+        <!-- Logo -->
+        <div style="text-align: center; padding: 20px;">
+            <img src="https://wqygnbvnizttqukiypdy.supabase.co/storage/v1/object/public/Lovelike/App_images/LOGO%202B.png"
+                alt="Lovelike" style="max-width: 150px; width: auto; height: auto;">
+        </div>
+
+        <!-- Imagem Principal com Card sobreposto -->
+        <div style="position: relative; width: 100%;">
+            <img class="banner-image" src="https://modulescomposer.s3.us-east-2.amazonaws.com/simpli/header-16.jpg"
+                alt="Banner" style="width: 100%; display: block; border-radius: 20px;">
+
+            <!-- Card sobreposto -->
+            <div class="card"
+                style="position: relative; margin: -60px 20px 0 20px; background: #f9f9f9; border-radius: 20px; padding: 30px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+
+                <!-- Cabeçalho -->
+                <p style="color: #05314a; margin-bottom: 10px; font-weight: bold; text-align: center;">
+                    Olá {{ambassador_name}},
+                </p>
+
+                <!-- Celebração -->
+                <div style="text-align: center; margin: 20px 0; animation: celebrate 2s infinite;">
+                    <h1 style="color: #ff714d; font-size: 24px; margin-bottom: 10px;">PARABÉNS!</h1>
+                    <p style="color: #05314a; font-size: 18px;">
+                        Você atingiu sua meta mensal
+                    </p>
+                </div>
+
+                <!-- Resultados -->
+                <div style="margin: 30px 0; padding: 25px; background-color: #fff3e0; border-radius: 15px;">
+                    <h2 style="color: #05314a; margin-bottom: 20px; font-size: 18px; text-align: center;">
+                        RESULTADOS
+                    </h2>
+
+                    <!-- Indicações -->
+                    <div style="background-color: white; padding: 20px; border-radius: 10px; margin-bottom: 15px;">
+                        <p style="color: #707070; margin-bottom: 5px; text-align: center;">Indicações convertidas</p>
+                        <div style="text-align: center;">
+                            <span style="color: #1976d2; font-size: 28px; font-weight: bold;">
+                                {{conversions}}
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Valor Gerado -->
+                    <div style="background-color: white; padding: 20px; border-radius: 10px; margin-bottom: 15px;">
+                        <p style="color: #707070; margin-bottom: 5px; text-align: center;">Valor gerado</p>
+                        <div style="text-align: center;">
+                            <span style="color: #2e7d32; font-size: 28px; font-weight: bold;">
+                                R$ {{generated_value}}
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Bônus -->
+                    <div style="background-color: white; padding: 20px; border-radius: 10px;">
+                        <p style="color: #707070; margin-bottom: 5px; text-align: center;">Bônus extra</p>
+                        <div style="text-align: center;">
+                            <span style="color: #ff714d; font-size: 28px; font-weight: bold;">
+                                R$ {{bonus_value}}
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Botão de Ação -->
+                    <div style="text-align: center; margin: 30px 0;">
+                        <a href="#"
+                            style="background-color: #ff714d; color: white; padding: 15px 40px; border-radius: 25px; text-decoration: none; display: inline-block; font-weight: bold; font-size: 16px; box-shadow: 0 4px 6px rgba(255, 113, 77, 0.2);">
+                            Ver Premiações
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div style="padding: 30px 20px; text-align: center; margin-top: 30px;">
+                <!-- Texto Redes Sociais -->
+                <p style="color: #707070; font-size: 16px; margin-bottom: 20px;">
+                    Nos acompanhe nas redes sociais
+                </p>
+
+                <!-- Ícones Redes Sociais -->
+                <table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
+                    <tr>
+                        <td align="center">
+                            <table role="presentation" style="border-collapse: collapse; display: inline-block;">
+                                <tr>
+                                    <td style="padding: 0 10px;">
+                                        <a href="https://www.instagram.com/lovelikeappoficial?igsh=MW5ydXA0ZjQxdjN5Zg=="
+                                            target="_blank" style="text-decoration: none;">
+                                            <img src="https://w7.pngwing.com/pngs/730/864/png-transparent-instagram-logo-computer-icons-insta-logo-text-computer-icons-circle-thumbnail.png"
+                                                alt="Instagram" width="24" height="24" style="display: block;">
+                                        </a>
+                                    </td>
+                                    <td style="padding: 0 10px;">
+                                        <a href="https://www.tiktok.com/@lovelike.app?_t=8qxQS2Qzcf8&_r=1"
+                                            target="_blank" style="text-decoration: none;">
+                                            <img src="https://i.pinimg.com/736x/5d/8b/c4/5d8bc46dc4dd94f5368420fc8e4e3d79.jpg"
+                                                alt="TikTok" width="24" height="24" style="display: block;">
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- Linha Divisória -->
+                <div style="width: 100%; height: 1px; background-color: #ddd; margin: 20px 0;"></div>
+
+                <!-- Copyright -->
+                <p style="color: #707070; font-size: 14px; margin-bottom: 20px;">
+                    2024 Lovelike Solutions Todos os direitos reservados
+                </p>
+
+                <!-- Texto Adicional -->
+                <p style="color: #707070; font-size: 12px;">
+                    Você recebeu esse email por que se cadastrou no Marketplace Lovelike Shop.
+                </p>
+
+                <!-- Logo -->
+                <div style="margin-top: 20px;">
+                    <img src="https://wqygnbvnizttqukiypdy.supabase.co/storage/v1/object/public/Lovelike/App_images/LOGO%202B.png"
+                        alt="Lovelike" style="max-width: 120px;">
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

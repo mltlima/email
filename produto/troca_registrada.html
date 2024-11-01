@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Solicitação de Troca</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .main-title {
+                font-size: 20px !important;
+                padding: 0 10px !important;
+            }
+
+            .card {
+                margin: -40px 10px 0 10px !important;
+                padding: 15px !important;
+                width: auto !important;
+            }
+
+            .banner-image {
+                border-radius: 0 !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="max-width: 600px; margin: 0 auto; overflow-x: hidden;">
+        <!-- Logo -->
+        <div style="text-align: center; padding: 20px;">
+            <img src="https://wqygnbvnizttqukiypdy.supabase.co/storage/v1/object/public/Lovelike/App_images/LOGO%202B.png"
+                alt="Lovelike" style="max-width: 150px; width: auto; height: auto;">
+        </div>
+
+        <!-- Imagem Principal com Card sobreposto -->
+        <div style="position: relative; width: 100%;">
+            <img class="banner-image" src="https://modulescomposer.s3.us-east-2.amazonaws.com/simpli/header-16.jpg"
+                alt="Banner" style="width: 100%; display: block; border-radius: 20px;">
+
+            <!-- Card sobreposto -->
+            <div class="card"
+                style="position: relative; margin: -60px 20px 0 20px; background: #f9f9f9; border-radius: 20px; padding: 30px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+
+                <!-- Cabeçalho -->
+                <p style="color: #05314a; margin-bottom: 10px; font-weight: bold; text-align: center;">
+                    Olá {{customer_name}},
+                </p>
+                <h1 class="main-title" style="color: #333; font-size: 24px; margin: 0 0 20px 0; text-align: center;">
+                    Recebemos sua solicitação de troca
+                </h1>
+
+                <!-- Status -->
+                <div
+                    style="text-align: center; margin: 20px 0; padding: 15px; background-color: #f8f9fa; border-radius: 10px;">
+                    <p style="color: #05314a; font-weight: bold; margin-bottom: 15px;">STATUS: Em análise pela marca</p>
+                    <a href="#"
+                        style="background-color: #ff714d; color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; display: inline-block;">
+                        Status da Troca
+                    </a>
+                </div>
+
+                <!-- Detalhes do Pedido -->
+                <div style="margin: 30px 0;">
+                    <h2 style="color: #05314a; margin-bottom: 15px;">DETALHES DO PEDIDO:</h2>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: #707070; margin-bottom: 10px;">• Número do pedido: #{{order_id}}</li>
+                        <li style="color: #707070; margin-bottom: 10px;">• Data da compra: {{purchase_date}}</li>
+                        <li style="color: #707070; margin-bottom: 10px;">• Data da solicitação:
+                            {{exchange_request_date}}
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Produto a ser Trocado -->
+                <div style="margin: 30px 0;">
+                    <h2 style="color: #05314a; margin-bottom: 15px;">PRODUTO QUE VOCÊ DESEJA TROCAR:</h2>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: #707070; margin-bottom: 10px;">• Nome: {{product_name}}</li>
+                        <li style="color: #707070; margin-bottom: 10px;">• Tamanho/Variação atual: {{variation}}</li>
+                        <li style="color: #707070; margin-bottom: 10px;">• Quantidade: {{quantity}}</li>
+                        <li style="color: #707070; margin-bottom: 10px;">• Motivo informado: {{exchange_reason}}</li>
+                    </ul>
+                </div>
+
+                <!-- Produto Solicitado -->
+                <div style="margin: 30px 0;">
+                    <h2 style="color: #05314a; margin-bottom: 15px;">PRODUTO SOLICITADO:</h2>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: #707070; margin-bottom: 10px;">• Nome: {{new_product_name}}</li>
+                        <li style="color: #707070; margin-bottom: 10px;">• Novo tamanho/Variação: {{new_variation}}</li>
+                        <li style="color: #707070; margin-bottom: 10px;">• Quantidade: {{new_quantity}}</li>
+                    </ul>
+                </div>
+
+                <!-- Próximos Passos -->
+                <div style="margin: 30px 0;">
+                    <h2 style="color: #05314a; margin-bottom: 15px;">PRÓXIMOS PASSOS:</h2>
+
+                    <div style="margin-bottom: 20px;">
+                        <p style="color: #05314a; font-weight: bold;">1️⃣ AGUARDAR APROVAÇÃO</p>
+                        <ul style="list-style: none; padding: 0 0 0 20px;">
+                            <li style="color: #707070; margin-bottom: 5px;">• A marca analisará seu pedido em até 48h
+                            </li>
+                            <li style="color: #707070; margin-bottom: 5px;">• Você receberá um email com a resposta</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <p style="color: #05314a; font-weight: bold;">2️⃣ APÓS APROVAÇÃO</p>
+                        <ul style="list-style: none; padding: 0 0 0 20px;">
+                            <li style="color: #707070; margin-bottom: 5px;">• Enviaremos o código de postagem gratuito
+                            </li>
+                            <li style="color: #707070; margin-bottom: 5px;">• Embale o produto adequadamente</li>
+                            <li style="color: #707070; margin-bottom: 5px;">• Poste em qualquer agência dos Correios
+                            </li>
+                            <li style="color: #707070; margin-bottom: 5px;">• Prazo para postagem: 7 dias úteis</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <p style="color: #05314a; font-weight: bold;">3️⃣ APÓS RECEBIMENTO</p>
+                        <ul style="list-style: none; padding: 0 0 0 20px;">
+                            <li style="color: #707070; margin-bottom: 5px;">• A marca inspecionará o produto</li>
+                            <li style="color: #707070; margin-bottom: 5px;">• O novo item será enviado em até 5 dias
+                                úteis
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Prazos Importantes -->
+                <div style="margin: 30px 0;">
+                    <h2 style="color: #05314a; margin-bottom: 15px;">PRAZOS IMPORTANTES:</h2>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: #707070; margin-bottom: 10px;">• Resposta da marca: até {{approval_deadline}}
+                        </li>
+                        <li style="color: #707070; margin-bottom: 10px;">• Seu prazo para postagem:
+                            {{customer_shipping_deadline}}</li>
+                        <li style="color: #707070; margin-bottom: 10px;">• Conclusão da troca:
+                            {{exchange_completion_deadline}}</li>
+                    </ul>
+                </div>
+
+                <!-- Importante -->
+                <div style="margin: 30px 0; padding: 20px; background-color: #fff3e0; border-radius: 10px;">
+                    <h2 style="color: #05314a; margin-bottom: 15px;">⚠️ IMPORTANTE:</h2>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: #707070; margin-bottom: 5px;">• Mantenha todas as etiquetas do produto</li>
+                        <li style="color: #707070; margin-bottom: 5px;">• O item deve estar sem uso</li>
+                        <li style="color: #707070; margin-bottom: 5px;">• Envie na embalagem original ou similar</li>
+                        <li style="color: #707070; margin-bottom: 5px;">• Inclua nota fiscal ou comprovante de compra
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botões de Ação -->
+                <div style="text-align: center; margin: 30px 0;">
+                    <a href="#"
+                        style="background-color: #f44336; color: white; padding: 15px 40px; border-radius: 25px; text-decoration: none; display: inline-block; margin-bottom: 15px;">
+                        Cancelar Solicitação
+                    </a>
+                    <p style="color: #707070; margin: 20px 0;">Dúvidas?</p>
+                    <p style="color: #707070; margin-bottom: 15px;">Nossa equipe está disponível:</p>
+                    <a href="#"
+                        style="background-color: #ff714d; color: white; padding: 15px 40px; border-radius: 25px; text-decoration: none; display: inline-block;">
+                        Falar com Atendimento
+                    </a>
+                </div>
+
+                <!-- Footer do Card -->
+                <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
+                    <p style="color: #707070; margin-bottom: 10px;">Atenciosamente,</p>
+                    <p style="color: #707070; margin-bottom: 20px;">Equipe Lovelike</p>
+                    <p style="color: #707070; font-size: 14px;">Consulte nossa política de trocas:</p>
+                    <a href="{{exchange_policy_link}}" style="color: #ff714d; text-decoration: underline;">Política de
+                        Trocas</a>
+                    <p style="color: #707070; font-style: italic; margin-top: 20px; font-size: 14px;">
+                        PS: Caso precise alterar algo na sua solicitação, entre em contato conosco imediatamente.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="padding: 30px 20px; text-align: center; margin-top: 30px;">
+            <!-- Texto Redes Sociais -->
+            <p style="color: #707070; font-size: 16px; margin-bottom: 20px;">
+                Nos acompanhe nas redes sociais
+            </p>
+
+            <!-- Ícones Redes Sociais -->
+            <table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
+                <tr>
+                    <td align="center">
+                        <table role="presentation" style="border-collapse: collapse; display: inline-block;">
+                            <tr>
+                                <td style="padding: 0 10px;">
+                                    <a href="https://www.instagram.com/lovelikeappoficial?igsh=MW5ydXA0ZjQxdjN5Zg=="
+                                        target="_blank" style="text-decoration: none;">
+                                        <img src="https://w7.pngwing.com/pngs/730/864/png-transparent-instagram-logo-computer-icons-insta-logo-text-computer-icons-circle-thumbnail.png"
+                                            alt="Instagram" width="24" height="24" style="display: block;">
+                                    </a>
+                                </td>
+                                <td style="padding: 0 10px;">
+                                    <a href="https://www.tiktok.com/@lovelike.app?_t=8qxQS2Qzcf8&_r=1" target="_blank"
+                                        style="text-decoration: none;">
+                                        <img src="https://i.pinimg.com/736x/5d/8b/c4/5d8bc46dc4dd94f5368420fc8e4e3d79.jpg"
+                                            alt="TikTok" width="24" height="24" style="display: block;">
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Linha Divisória -->
+            <div style="width: 100%; height: 1px; background-color: #ddd; margin: 20px 0;"></div>
+
+            <!-- Copyright -->
+            <p style="color: #707070; font-size: 14px; margin-bottom: 20px;">
+                2024 Lovelike Solutions Todos os direitos reservados
+            </p>
+
+            <!-- Texto Adicional -->
+            <p style="color: #707070; font-size: 12px;">
+                Você recebeu esse email por que se cadastrou no Marketplace Lovelike Shop.
+            </p>
+
+            <!-- Logo -->
+            <div style="margin-top: 20px;">
+                <img src="https://wqygnbvnizttqukiypdy.supabase.co/storage/v1/object/public/Lovelike/App_images/LOGO%202B.png"
+                    alt="Lovelike" style="max-width: 120px;">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

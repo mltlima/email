@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Confirmação de Campanha - Influencer</title>
+    <title>Bem-vindo ao Lovelike Shop</title>
     <style>
         * {
             box-sizing: border-box;
@@ -28,26 +28,25 @@
                 margin: 0 !important;
             }
 
-            .main-title {
-                font-size: 20px !important;
-                padding: 0 10px !important;
-            }
-
             .card {
                 margin: -40px 10px 0 10px !important;
                 padding: 15px !important;
-                width: auto !important;
             }
 
             .banner-image {
                 border-radius: 0 !important;
+            }
+
+            .main-title {
+                font-size: 20px !important;
+                padding: 0 10px !important;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="container" style="text-align: center; max-width: 600px; margin: 0 auto; overflow-x: hidden;">
+    <div class="container" style="max-width: 600px; margin: 0 auto; overflow-x: hidden;">
         <!-- Logo -->
         <div style="text-align: center; padding: 20px;">
             <img src="https://wqygnbvnizttqukiypdy.supabase.co/storage/v1/object/public/Lovelike/App_images/LOGO%202B.png"
@@ -56,7 +55,7 @@
 
         <!-- Imagem Principal com Card sobreposto -->
         <div style="position: relative; width: 100%;">
-            <img class="banner-image" src="https://modulescomposer.s3.us-east-2.amazonaws.com/simpli/header-6.jpg"
+            <img class="banner-image" src="https://modulescomposer.s3.us-east-2.amazonaws.com/simpli/header-1.jpg"
                 alt="Banner" style="width: 100%; display: block; border-radius: 20px;">
 
             <!-- Card sobreposto -->
@@ -65,84 +64,38 @@
 
                 <!-- Cabeçalho -->
                 <p style="color: #05314a; margin-bottom: 10px; font-weight: bold; text-align: center;">Olá
-                    {{influencer_name}},</p>
+                    {{brand_name}},</p>
                 <h1 class="main-title" style="color: #333; font-size: 24px; margin: 0 0 20px 0; text-align: center;">
-                    Parabéns! Sua participação na campanha foi confirmada.
+                    Estamos felizes em ter você no Lovelike Shop!
                 </h1>
 
-                <!-- Detalhes da Campanha -->
+                <!-- Seus Acessos -->
                 <div style="background-color: #f8f8f8; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
-                    <h2 style="color: #ff714d; font-size: 18px; margin-bottom: 15px;">DETALHES DA CAMPANHA</h2>
+                    <h2 style="color: #ff714d; font-size: 18px; margin-bottom: 15px;">SEUS ACESSOS:</h2>
                     <div style="color: #707070;">
-                        <p style="margin-bottom: 8px;"><strong>Marca:</strong> {{brand_name}}</p>
-                        <p style="margin-bottom: 8px;"><strong>Valor:</strong> R$ {{campaign_value}}</p>
-                        <p style="margin-bottom: 8px;"><strong>Início:</strong> {{start_date}}</p>
-                        <p style="margin-bottom: 8px;"><strong>Término:</strong> {{end_date}}</p>
+                        <p style="margin-bottom: 8px;">• Dashboard: {{dashboard_link}}</p>
+                        <p style="margin-bottom: 8px;">• Login: {{email}}</p>
+                        <p style="margin-bottom: 8px;">• Senha temporária: {{temp_password}}</p>
                     </div>
                 </div>
 
-                <!-- Entregas -->
-                <div style="margin: 20px 0;">
-                    <h2 style="color: #ff714d; font-size: 18px; margin-bottom: 15px;">ENTREGAS:</h2>
+                <!-- Próximos Passos -->
+                <div style="margin: 20px 0; background-color: #f0f9ff; padding: 20px; border-radius: 10px;">
+                    <h2 style="color: #05314a; font-size: 18px; margin-bottom: 15px;">PRÓXIMOS PASSOS:</h2>
                     <div style="color: #707070;">
-                        {{#each deliverables}}
-                        <p style="margin-bottom: 8px;">• {{content_type}} - Entregar até: {{delivery_date}}</p>
-                        {{/each}}
+                        <p style="margin-bottom: 8px;">1. Complete seu perfil</p>
+                        <p style="margin-bottom: 8px;">2. Cadastre seus produtos</p>
+                        <p style="margin-bottom: 8px;">3. Configure métodos de pagamento</p>
+                        <p style="margin-bottom: 8px;">4. Defina políticas de frete</p>
                     </div>
                 </div>
 
-                <!-- Datas Importantes -->
-                <div style="margin: 20px 0; background-color: #f8f8f8; padding: 20px; border-radius: 10px;">
-                    <h2 style="color: #ff714d; font-size: 18px; margin-bottom: 15px;">DATAS IMPORTANTES:</h2>
-                    <div style="color: #707070;">
-                        <p style="margin-bottom: 8px;">• Envio do conteúdo para aprovação: {{content_submission_date}}
-                        </p>
-                        <p style="margin-bottom: 8px;">• Prazo para ajustes: {{revision_date}}</p>
-                        <p style="margin-bottom: 8px;">• Publicação: {{publishing_date}}</p>
-                    </div>
-                </div>
-
-                <!-- Pagamento -->
-                <div style="margin: 20px 0;">
-                    <h2 style="color: #ff714d; font-size: 18px; margin-bottom: 15px;">PAGAMENTO:</h2>
-                    <div style="color: #707070;">
-                        <p style="margin-bottom: 8px;">• Valor total: R$ {{payment_value}}</p>
-                        <p style="margin-bottom: 8px;">• Liberação: {{payment_release_date}}</p>
-                        <p style="margin-bottom: 8px;">• Método: {{payment_method}}</p>
-                    </div>
-                </div>
-
-                <!-- Botões de Ação -->
+                <!-- Botão de Ação -->
                 <div style="text-align: center; margin: 30px 0;">
                     <a href="#"
-                        style="background-color: #ff714d; color: white; padding: 15px 40px; border-radius: 25px; text-decoration: none; display: inline-block; margin-bottom: 15px;">
-                        Acessar Briefing
+                        style="background-color: #ff714d; color: white; padding: 15px 40px; border-radius: 25px; text-decoration: none; display: inline-block;">
+                        Começar Agora
                     </a>
-                </div>
-
-                <!-- Lembretes -->
-                <div style="margin: 30px 0; background-color: #f8f8f8; padding: 20px; border-radius: 10px;">
-                    <h2 style="color: #ff714d; font-size: 18px; margin-bottom: 15px;">Lembretes importantes:</h2>
-                    <ul style="color: #707070; list-style: none;">
-                        <li style="margin-bottom: 8px;">• Siga rigorosamente o briefing aprovado</li>
-                        <li style="margin-bottom: 8px;">• Cumpra os prazos estabelecidos</li>
-                        <li style="margin-bottom: 8px;">• Mantenha o conteúdo no ar pelo período contratado</li>
-                        <li style="margin-bottom: 8px;">• Use as hashtags obrigatórias</li>
-                    </ul>
-                </div>
-
-                <div style="text-align: center; margin: 30px 0;">
-                    <a href="#"
-                        style="background-color: #05314a; color: white; padding: 15px 40px; border-radius: 25px; text-decoration: none; display: inline-block;">
-                        Acessar Dashboard
-                    </a>
-                </div>
-
-                <!-- Mensagem Final -->
-                <div style="text-align: center; margin-top: 30px; color: #707070;">
-                    <p style="margin-bottom: 15px;">Dúvidas? Estamos à disposição!</p>
-                    <p style="margin-bottom: 15px;">Boa produção!</p>
-                    <p style="font-weight: bold;">Equipe Lovelike</p>
                 </div>
             </div>
         </div>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Confirmação de Campanha - Influencer</title>
+    <title>Solicitação de Troca</title>
     <style>
         * {
             box-sizing: border-box;
@@ -47,7 +47,7 @@
 </head>
 
 <body>
-    <div class="container" style="text-align: center; max-width: 600px; margin: 0 auto; overflow-x: hidden;">
+    <div class="container" style="max-width: 600px; margin: 0 auto; overflow-x: hidden;">
         <!-- Logo -->
         <div style="text-align: center; padding: 20px;">
             <img src="https://wqygnbvnizttqukiypdy.supabase.co/storage/v1/object/public/Lovelike/App_images/LOGO%202B.png"
@@ -56,93 +56,102 @@
 
         <!-- Imagem Principal com Card sobreposto -->
         <div style="position: relative; width: 100%;">
-            <img class="banner-image" src="https://modulescomposer.s3.us-east-2.amazonaws.com/simpli/header-6.jpg"
+            <img class="banner-image" src="https://modulescomposer.s3.us-east-2.amazonaws.com/simpli/header-16.jpg"
                 alt="Banner" style="width: 100%; display: block; border-radius: 20px;">
 
             <!-- Card sobreposto -->
             <div class="card"
                 style="position: relative; margin: -60px 20px 0 20px; background: #f9f9f9; border-radius: 20px; padding: 30px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-
-                <!-- Cabeçalho -->
                 <p style="color: #05314a; margin-bottom: 10px; font-weight: bold; text-align: center;">Olá
-                    {{influencer_name}},</p>
+                    {{brand_name}},</p>
                 <h1 class="main-title" style="color: #333; font-size: 24px; margin: 0 0 20px 0; text-align: center;">
-                    Parabéns! Sua participação na campanha foi confirmada.
+                    Uma solicitação de troca foi registrada no Lovelike Shop
                 </h1>
 
-                <!-- Detalhes da Campanha -->
-                <div style="background-color: #f8f8f8; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
-                    <h2 style="color: #ff714d; font-size: 18px; margin-bottom: 15px;">DETALHES DA CAMPANHA</h2>
-                    <div style="color: #707070;">
-                        <p style="margin-bottom: 8px;"><strong>Marca:</strong> {{brand_name}}</p>
-                        <p style="margin-bottom: 8px;"><strong>Valor:</strong> R$ {{campaign_value}}</p>
-                        <p style="margin-bottom: 8px;"><strong>Início:</strong> {{start_date}}</p>
-                        <p style="margin-bottom: 8px;"><strong>Término:</strong> {{end_date}}</p>
-                    </div>
+                <!-- Detalhes do Pedido -->
+                <div style="margin: 30px 0;">
+                    <h2 style="color: #05314a; margin-bottom: 15px;">DETALHES DO PEDIDO:</h2>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: #707070; margin-bottom: 10px;">• Número do pedido: #{{order_id}}</li>
+                        <li style="color: #707070; margin-bottom: 10px;">• Cliente: {{customer_name}}</li>
+                        <li style="color: #707070; margin-bottom: 10px;">• Data da compra: {{purchase_date}}</li>
+                        <li style="color: #707070; margin-bottom: 10px;">• Data da solicitação:
+                            {{exchange_request_date}}
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Entregas -->
-                <div style="margin: 20px 0;">
-                    <h2 style="color: #ff714d; font-size: 18px; margin-bottom: 15px;">ENTREGAS:</h2>
-                    <div style="color: #707070;">
-                        {{#each deliverables}}
-                        <p style="margin-bottom: 8px;">• {{content_type}} - Entregar até: {{delivery_date}}</p>
-                        {{/each}}
-                    </div>
+                <!-- Produto a ser Trocado -->
+                <div style="margin: 30px 0;">
+                    <h2 style="color: #05314a; margin-bottom: 15px;">PRODUTO A SER TROCADO:</h2>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: #707070; margin-bottom: 10px;">• Nome: {{product_name}}</li>
+                        <li style="color: #707070; margin-bottom: 10px;">• SKU: {{product_sku}}</li>
+                        <li style="color: #707070; margin-bottom: 10px;">• Quantidade: {{quantity}}</li>
+                        <li style="color: #707070; margin-bottom: 10px;">• Tamanho/Variação: {{variation}}</li>
+                        <li style="color: #707070; margin-bottom: 10px;">• Motivo da troca: {{exchange_reason}}</li>
+                    </ul>
                 </div>
 
-                <!-- Datas Importantes -->
-                <div style="margin: 20px 0; background-color: #f8f8f8; padding: 20px; border-radius: 10px;">
-                    <h2 style="color: #ff714d; font-size: 18px; margin-bottom: 15px;">DATAS IMPORTANTES:</h2>
-                    <div style="color: #707070;">
-                        <p style="margin-bottom: 8px;">• Envio do conteúdo para aprovação: {{content_submission_date}}
-                        </p>
-                        <p style="margin-bottom: 8px;">• Prazo para ajustes: {{revision_date}}</p>
-                        <p style="margin-bottom: 8px;">• Publicação: {{publishing_date}}</p>
-                    </div>
-                </div>
-
-                <!-- Pagamento -->
-                <div style="margin: 20px 0;">
-                    <h2 style="color: #ff714d; font-size: 18px; margin-bottom: 15px;">PAGAMENTO:</h2>
-                    <div style="color: #707070;">
-                        <p style="margin-bottom: 8px;">• Valor total: R$ {{payment_value}}</p>
-                        <p style="margin-bottom: 8px;">• Liberação: {{payment_release_date}}</p>
-                        <p style="margin-bottom: 8px;">• Método: {{payment_method}}</p>
-                    </div>
+                <!-- Produto Solicitado -->
+                <div style="margin: 30px 0;">
+                    <h2 style="color: #05314a; margin-bottom: 15px;">PRODUTO SOLICITADO:</h2>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: #707070; margin-bottom: 10px;">• Nome: {{new_product_name}}</li>
+                        <li style="color: #707070; margin-bottom: 10px;">• SKU: {{new_product_sku}}</li>
+                        <li style="color: #707070; margin-bottom: 10px;">• Quantidade: {{new_quantity}}</li>
+                        <li style="color: #707070; margin-bottom: 10px;">• Tamanho/Variação: {{new_variation}}</li>
+                    </ul>
                 </div>
 
                 <!-- Botões de Ação -->
                 <div style="text-align: center; margin: 30px 0;">
                     <a href="#"
-                        style="background-color: #ff714d; color: white; padding: 15px 40px; border-radius: 25px; text-decoration: none; display: inline-block; margin-bottom: 15px;">
-                        Acessar Briefing
+                        style="background-color: #4CAF50; color: white; padding: 15px 40px; border-radius: 25px; text-decoration: none; display: inline-block; margin: 0 10px;">
+                        Aprovar Troca
+                    </a>
+                    <a href="#"
+                        style="background-color: #f44336; color: white; padding: 15px 40px; border-radius: 25px; text-decoration: none; display: inline-block; margin: 0 10px;">
+                        Recusar Troca
                     </a>
                 </div>
 
-                <!-- Lembretes -->
-                <div style="margin: 30px 0; background-color: #f8f8f8; padding: 20px; border-radius: 10px;">
-                    <h2 style="color: #ff714d; font-size: 18px; margin-bottom: 15px;">Lembretes importantes:</h2>
-                    <ul style="color: #707070; list-style: none;">
-                        <li style="margin-bottom: 8px;">• Siga rigorosamente o briefing aprovado</li>
-                        <li style="margin-bottom: 8px;">• Cumpra os prazos estabelecidos</li>
-                        <li style="margin-bottom: 8px;">• Mantenha o conteúdo no ar pelo período contratado</li>
-                        <li style="margin-bottom: 8px;">• Use as hashtags obrigatórias</li>
+                <!-- Informações Logísticas -->
+                <div style="margin: 30px 0;">
+                    <h2 style="color: #05314a; margin-bottom: 15px;">INFORMAÇÕES LOGÍSTICAS:</h2>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: #707070; margin-bottom: 10px;">• Endereço de devolução: {{return_address}}
+                        </li>
+                        <li style="color: #707070; margin-bottom: 10px;">• Método de envio: {{shipping_method}}</li>
                     </ul>
                 </div>
 
-                <div style="text-align: center; margin: 30px 0;">
-                    <a href="#"
-                        style="background-color: #05314a; color: white; padding: 15px 40px; border-radius: 25px; text-decoration: none; display: inline-block;">
-                        Acessar Dashboard
-                    </a>
+                <!-- Prazos -->
+                <div style="margin: 30px 0;">
+                    <h2 style="color: #05314a; margin-bottom: 15px;">PRAZOS:</h2>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: #707070; margin-bottom: 10px;">• Aprovação da solicitação: até
+                            {{approval_deadline}}</li>
+                        <li style="color: #707070; margin-bottom: 10px;">• Postagem pelo cliente: até
+                            {{customer_shipping_deadline}}</li>
+                        <li style="color: #707070; margin-bottom: 10px;">• Conclusão da troca: até
+                            {{exchange_completion_deadline}}</li>
+                    </ul>
                 </div>
 
-                <!-- Mensagem Final -->
-                <div style="text-align: center; margin-top: 30px; color: #707070;">
-                    <p style="margin-bottom: 15px;">Dúvidas? Estamos à disposição!</p>
-                    <p style="margin-bottom: 15px;">Boa produção!</p>
-                    <p style="font-weight: bold;">Equipe Lovelike</p>
+                <!-- Observações do Cliente -->
+                <div style="margin: 30px 0;">
+                    <h2 style="color: #05314a; margin-bottom: 15px;">OBSERVAÇÕES DO CLIENTE:</h2>
+                    <p style="color: #707070; padding: 10px; background-color: #f9f9f9; border-radius: 5px;">
+                        {{customer_notes}}</p>
+                </div>
+
+                <!-- Suporte -->
+                <div style="text-align: center; margin: 30px 0;">
+                    <a href="#"
+                        style="background-color: #ff714d; color: white; padding: 15px 40px; border-radius: 25px; text-decoration: none; display: inline-block;">
+                        Falar com Atendimento
+                    </a>
                 </div>
             </div>
         </div>

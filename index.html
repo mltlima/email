@@ -30,11 +30,32 @@
 
             .delivery-info {
                 flex-direction: column !important;
+                gap: 10px !important;
             }
 
             .delivery-column {
-                padding: 10px 0 !important;
                 width: 100% !important;
+                margin-bottom: 10px !important;
+            }
+
+            .product-image {
+                max-width: 80px !important;
+            }
+
+            .product-container {
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+            }
+
+            .payment-section {
+                flex-direction: column !important;
+            }
+
+            .payment-info,
+            .payment-summary {
+                width: 100% !important;
+                margin: 10px 0 !important;
             }
 
             .main-title {
@@ -45,7 +66,6 @@
             .card {
                 margin: -40px 10px 0 10px !important;
                 padding: 15px !important;
-                width: auto !important;
             }
 
             .banner-image {
@@ -70,7 +90,7 @@
 
             <!-- Card sobreposto -->
             <div class="card"
-                style="position: relative; margin: -60px 20px 0 20px; background: white; border-radius: 20px; padding: 30px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                style="position: relative; margin: -60px 20px 0 20px; background: #f9f9f9; border-radius: 20px; padding: 30px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
                 <p style="color: #05314a; margin-bottom: 10px; font-weight: bold; text-align: center;">Olá
                     {{customer_name}},</p>
                 <h1 class="main-title" style="color: #333; font-size: 24px; margin: 0 0 20px 0; text-align: center;">
@@ -79,7 +99,7 @@
 
                 <!-- Detalhes do Pedido -->
                 <div style="margin: 30px 0; text-align: center;">
-                    <p style="color: #666; margin-bottom: 15px; font-weight: bold;">DETALHES DO PEDIDO</p>
+                    <p style="color: #707070; margin-bottom: 15px; font-weight: bold;">DETALHES DO PEDIDO</p>
                     <div
                         style="background-color: #05314a; color: white; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
                         <p style="margin: 0;">#{{order_number}}</p>
@@ -87,82 +107,156 @@
                 </div>
 
                 <!-- Informações de Entrega -->
-                <div class="delivery-info"
-                    style="display: flex; justify-content: space-between; margin-top: 30px; text-align: center;">
-                    <div class="delivery-column" style="flex: 1;">
-                        <h3 style="color: #333; margin-bottom: 10px;">ENDEREÇO DE ENTREGA</h3>
-                        <p style="color: #666; margin: 0;">{{delivery_address}}</p>
-                    </div>
-                    <div class="delivery-column" style="flex: 1;">
-                        <h3 style="color: #333; margin-bottom: 10px;">PREVISÃO DE ENTREGA</h3>
-                        <p style="color: #666; margin: 0;">{{estimated_delivery_date}}</p>
-                    </div>
-                </div>
+                <table width="100%" cellspacing="0" cellpadding="0" style="margin-top: 30px;">
+                    <tr>
+                        <td width="47%" valign="top">
+                            <div
+                                style="background: #f8f8f8; padding: 20px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                                <h3 style="color: #333; margin-bottom: 15px; text-align: center;">ENDEREÇO DE ENTREGA
+                                </h3>
+                                <p style="color: #707070; margin: 0; text-align: center;">{{delivery_address}}</p>
+                            </div>
+                        </td>
+                        <td width="6%"></td>
+                        <td width="47%" valign="top">
+                            <div
+                                style="background: #f8f8f8; padding: 20px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                                <h3 style="color: #333; margin-bottom: 15px; text-align: center;">PREVISÃO DE ENTREGA
+                                </h3>
+                                <p style="color: #707070; margin: 0; text-align: center;">{{estimated_delivery_date}}
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
 
-        <!-- Seção Única de Produtos e Pagamento -->
+        <!-- Seção de Produtos -->
         <div
-            style="margin: 30px 20px; background: white; border-radius: 25px; padding: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-            <!-- Título -->
+            style="margin: 30px auto; background: #f9f9f9; border-radius: 25px; padding: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
             <h2 style="color: #333; text-align: center; margin-bottom: 25px;">SEUS PRODUTOS</h2>
 
             <!-- Lista de Produtos -->
             <div style="margin-bottom: 25px;">
                 {{#each products}}
-                <div style="display: flex; padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid #eee;">
-                    <div style="flex: 0 0 100px;">
-                        <img src="{{product_image}}" alt="{{product_name}}" style="width: 100%; border-radius: 5px;">
-                    </div>
-                    <div style="flex: 1; padding-left: 15px;">
-                        <h3 style="color: #05314a; margin: 0 0 5px 0;">{{product_name}}</h3>
-                        <p style="color: #666; margin: 0 0 5px 0;">{{product_description}}</p>
-                        <div style="color: #666;">
-                            <span>Cor: {{color}}</span><br>
-                            <span>Qtd: {{quantity}}</span><br>
-                            <span>Preço: R$ {{price}}</span>
-                        </div>
-                    </div>
-                </div>
+                <table width="100%" cellspacing="0" cellpadding="0"
+                    style="margin-bottom: 15px; background: #f8f8f8; border-radius: 10px;">
+                    <tr>
+                        <td style="padding: 15px;">
+                            <table width="100%" cellspacing="0" cellpadding="0" style="border-spacing: 0;">
+                                <tr>
+                                    <!-- Media query for mobile devices -->
+                                    <style>
+                                        @media screen and (max-width: 600px) {
+                                            .product-container {
+                                                display: block !important;
+                                            }
+
+                                            .product-image {
+                                                display: block !important;
+                                                width: 100% !important;
+                                                padding-right: 0 !important;
+                                                padding-bottom: 15px !important;
+                                            }
+
+                                            .product-image img {
+                                                width: 100% !important;
+                                                height: auto !important;
+                                                max-height: 200px !important;
+                                            }
+
+                                            .product-details {
+                                                display: block !important;
+                                                width: 100% !important;
+                                            }
+                                        }
+                                    </style>
+
+                                    <!-- Product container -->
+                                    <table width="100%" cellspacing="0" cellpadding="0" class="product-container"
+                                        style="border-collapse: collapse;">
+                                        <tr>
+                                            <!-- Product image cell -->
+                                            <td width="100" class="product-image"
+                                                style="vertical-align: top; padding-right: 20px;">
+                                                <img src="{{product_image}}" alt="{{product_name}}"
+                                                    style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover; display: block;">
+                                            </td>
+
+                                            <!-- Product details cell -->
+                                            <td class="product-details" style="vertical-align: top;">
+                                                <h3 style="color: #05314a; margin: 0 0 10px 0; font-size: 16px;">
+                                                    {{product_name}}</h3>
+                                                <p style="color: #707070; margin: 0 0 10px 0; font-size: 14px;">
+                                                    {{product_description}}</p>
+                                                <table width="100%" cellspacing="0" cellpadding="0"
+                                                    style="color: #707070; font-size: 14px;">
+                                                    <tr>
+                                                        <td style="padding-bottom: 5px;">Cor: {{color}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="padding-bottom: 5px;">Qtd: {{quantity}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="white-space: nowrap;">Preço: R$&nbsp;{{price}}</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
                 {{/each}}
             </div>
 
-            <!-- Linha divisória -->
-            <div style="height: 1px; background-color: #eee; margin: 25px 0;"></div>
-
             <!-- Seção de Pagamento -->
-            <div>
-                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                    <!-- Coluna da Esquerda - Pagamento -->
-                    <div style="flex: 1;">
-                        <h3 style="color: #333; margin-bottom: 15px;">PAGAMENTO</h3>
-                        <p style="color: #666; margin: 5px 0;">{{payment_method}}</p>
-                        {{#if card_info}}
-                        <p style="color: #666; margin: 5px 0;">**** **** **** {{card_last_digits}}</p>
-                        {{/if}}
-                    </div>
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
+                <table width="100%" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="47%" valign="top">
+                            <div style="background: #f8f8f8; padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #333; margin-bottom: 15px;">PAGAMENTO</h3>
+                                <p style="color: #707070; margin: 5px 0;">{{payment_method}}</p>
+                                {{#if card_info}}
+                                <p style="color: #707070; margin: 5px 0;">**** **** **** {{card_last_digits}}</p>
+                                {{/if}}
+                            </div>
+                        </td>
+                        <td width="6%"></td>
+                        <td width="47%" valign="top">
+                            <div style="background: #f8f8f8; padding: 20px; border-radius: 10px;">
+                                <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
+                                    <tr>
+                                        <td style="color: #707070; vertical-align: middle;">Subtotal:</td>
+                                        <td
+                                            style="color: #333; text-align: right; white-space: nowrap; vertical-align: middle;">
+                                            R$&nbsp;{{subtotal}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #707070; padding-top: 10px; vertical-align: middle;">Frete:
+                                        </td>
+                                        <td
+                                            style="color: #333; text-align: right; white-space: nowrap; padding-top: 10px; vertical-align: middle;">
+                                            R$&nbsp;{{shipping_cost}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
 
-                    <!-- Coluna da Direita - Valores -->
-                    <div style="flex: 1; text-align: right;">
-                        <div style="margin-bottom: 10px;">
-                            <span style="color: #666;">Subtotal:</span>
-                            <span style="color: #333; margin-left: 10px;">R$ {{subtotal}}</span>
-                        </div>
-                        <div style="margin-bottom: 10px;">
-                            <span style="color: #666;">Frete:</span>
-                            <span style="color: #333; margin-left: 10px;">R$ {{shipping_cost}}</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Botão Total -->
+                <!-- Total -->
                 <div
                     style="background-color: #05314a; color: white; padding: 15px; border-radius: 25px; text-align: center; margin-top: 20px;">
-                    <span style="font-weight: bold;">Total: R$ {{total_amount}}</span>
+                    <span style="font-weight: bold; white-space: nowrap;">Total: R$&nbsp;{{total_amount}}</span>
                 </div>
 
                 <!-- Texto de Acompanhamento -->
-                <p style="color: #666; font-size: 14.4px; text-align: center; margin-top: 30px; font-style: italic;">
+                <p style="color: #707070; font-size: 14.4px; text-align: center; margin-top: 30px; font-style: italic;">
                     Acompanhe seu pedido em tempo real pelo app ou site
                 </p>
 
@@ -179,38 +273,46 @@
         <!-- Footer -->
         <div style="padding: 30px 20px; text-align: center; margin-top: 30px;">
             <!-- Texto Redes Sociais -->
-            <p style="color: #666; font-size: 16px; margin-bottom: 20px;">
+            <p style="color: #707070; font-size: 16px; margin-bottom: 20px;">
                 Nos acompanhe nas redes sociais
             </p>
 
             <!-- Ícones Redes Sociais -->
-            <div style="margin-bottom: 30px;">
-                <a href="https://www.instagram.com/lovelikeappoficial?igsh=MW5ydXA0ZjQxdjN5Zg==" target="_blank"
-                    style="display: inline-block; margin: 0 10px; text-decoration: none;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#666">
-                        <path
-                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                    </svg>
-                </a>
-                <a href="https://www.tiktok.com/@lovelike.app?_t=8qxQS2Qzcf8&_r=1" target="_blank"
-                    style="display: inline-block; margin: 0 10px; text-decoration: none;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#666">
-                        <path
-                            d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
-                    </svg>
-                </a>
-            </div>
+            <table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
+                <tr>
+                    <td align="center">
+                        <table role="presentation" style="border-collapse: collapse; display: inline-block;">
+                            <tr>
+                                <td style="padding: 0 10px;">
+                                    <a href="https://www.instagram.com/lovelikeappoficial?igsh=MW5ydXA0ZjQxdjN5Zg=="
+                                        target="_blank" style="text-decoration: none;">
+                                        <img src="https://w7.pngwing.com/pngs/730/864/png-transparent-instagram-logo-computer-icons-insta-logo-text-computer-icons-circle-thumbnail.png"
+                                            alt="Instagram" width="24" height="24" style="display: block;">
+                                    </a>
+                                </td>
+                                <td style="padding: 0 10px;">
+                                    <a href="https://www.tiktok.com/@lovelike.app?_t=8qxQS2Qzcf8&_r=1" target="_blank"
+                                        style="text-decoration: none;">
+                                        <img src="https://i.pinimg.com/736x/5d/8b/c4/5d8bc46dc4dd94f5368420fc8e4e3d79.jpg"
+                                            alt="TikTok" width="24" height="24" style="display: block;">
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
 
             <!-- Linha Divisória -->
             <div style="width: 100%; height: 1px; background-color: #ddd; margin: 20px 0;"></div>
 
             <!-- Copyright -->
-            <p style="color: #666; font-size: 14px; margin-bottom: 20px;">
+            <p style="color: #707070; font-size: 14px; margin-bottom: 20px;">
                 2024 Lovelike Solutions Todos os direitos reservados
             </p>
 
             <!-- Texto Adicional -->
-            <p style="color: #666; font-size: 12px;">
+            <p style="color: #707070; font-size: 12px;">
                 Você recebeu esse email por que se cadastrou no Marketplace Lovelike Shop.
             </p>
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Cancelamento de Comissão</title>
+    <title>Bem-vindo ao Lovelike Shop</title>
     <style>
         * {
             box-sizing: border-box;
@@ -28,19 +28,18 @@
                 margin: 0 !important;
             }
 
-            .main-title {
-                font-size: 20px !important;
-                padding: 0 10px !important;
-            }
-
             .card {
                 margin: -40px 10px 0 10px !important;
                 padding: 15px !important;
-                width: auto !important;
             }
 
             .banner-image {
                 border-radius: 0 !important;
+            }
+
+            .main-title {
+                font-size: 20px !important;
+                padding: 0 10px !important;
             }
         }
     </style>
@@ -56,65 +55,64 @@
 
         <!-- Imagem Principal com Card sobreposto -->
         <div style="position: relative; width: 100%;">
-            <img class="banner-image" src="https://modulescomposer.s3.us-east-2.amazonaws.com/simpli/header-15.jpg"
+            <img class="banner-image" src="https://modulescomposer.s3.us-east-2.amazonaws.com/simpli/header-1.jpg"
                 alt="Banner" style="width: 100%; display: block; border-radius: 20px;">
 
             <!-- Card sobreposto -->
             <div class="card"
                 style="position: relative; margin: -60px 20px 0 20px; background: #f9f9f9; border-radius: 20px; padding: 30px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                <p style="color: #05314a; margin-bottom: 10px; font-weight: bold; text-align: center;">Olá
-                    {{influencer_name}},</p>
-                <h1 class="main-title" style="color: #333; font-size: 24px; margin: 0 0 20px 0; text-align: center;">
-                    Informamos que houve um cancelamento de venda no Lovelike Shop.
-                </h1>
+                <p style="color: #05314a; margin-bottom: 10px; font-weight: bold; text-align: center;">Olá {{name}},</p>
+                <p style="color: #707070; line-height: 1.6; text-align: center; margin-bottom: 25px;">
+                    É um prazer ter você no Lovelike Shop, o marketplace que revoluciona a experiência de compra e venda
+                    com inteligência artificial!
+                </p>
 
-                <!-- Detalhes do Cancelamento -->
-                <div style="margin: 30px 0; background-color: #fff3cd; padding: 20px; border-radius: 10px;">
-                    <h2 style="color: #333; font-size: 18px; margin-bottom: 15px;">DETALHES:</h2>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="color: #707070; margin-bottom: 10px;">• Pedido: #{{order_id}}</li>
-                        <li style="color: #707070; margin-bottom: 10px;">• Produto: {{product_name}}</li>
-                        <li style="color: #707070; margin-bottom: 10px;">• Valor da venda: R$ {{sale_value}}</li>
-                        <li style="color: #707070; margin-bottom: 10px;">• Comissão cancelada: R$ {{commission_value}}
-                        </li>
-                    </ul>
-                </div>
+                <p style="color: #05314a; font-weight: bold; margin-bottom: 15px;">A partir de agora, você tem acesso a:
+                </p>
+                <p style="color: #707070; line-height: 1.6; margin-bottom: 25px;">
+                    • Produtos recomendados especialmente para você<br>
+                    • Ofertas exclusivas de influenciadores<br>
+                    • Sistema de cashback inteligente<br>
+                    • Experiência de compra personalizada
+                </p>
 
-                <!-- Impacto Financeiro -->
-                <div style="margin: 30px 0; background-color: #f8f9fa; padding: 20px; border-radius: 10px;">
-                    <h2 style="color: #333; font-size: 18px; margin-bottom: 15px;">IMPACTO FINANCEIRO:</h2>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="color: #707070; margin-bottom: 10px;">• Ajuste na carteira digital: -R$
-                            {{commission_value}}</li>
-                        <li style="color: #707070; margin-bottom: 10px;">• Novo saldo: R$ {{new_balance}}</li>
-                    </ul>
-                </div>
+                <p style="color: #05314a; font-weight: bold; margin-bottom: 15px;">Aproveite seus benefícios de
+                    boas-vindas:</p>
+                <p style="color: #707070; line-height: 1.6; margin-bottom: 25px;">
+                    🎁 15% OFF na primeira compra<br>
+                    ⭐ Frete grátis por 30 dias<br>
+                    💎 Acesso antecipado a promoções
+                </p>
 
-                <!-- Mensagem de Incentivo -->
-                <div style="text-align: center; margin: 30px 0;">
-                    <p style="color: #333; font-size: 18px; margin-bottom: 20px;">Mantenha-se ativo:</p>
+                <p style="color: #05314a; font-weight: bold; margin-bottom: 15px;">Para começar:</p>
+                <p style="color: #707070; line-height: 1.6; margin-bottom: 25px;">
+                    1. Complete seu perfil de preferências<br>
+                    2. Explore as lojas verificadas<br>
+                    3. Ative as notificações de ofertas<br>
+                    4. Acompanhe seus influenciadores favoritos
+                </p>
+
+                <p style="color: #707070; line-height: 1.6; text-align: center; margin-bottom: 15px;">
+                    Nossa IA está pronta para tornar suas compras mais inteligentes e prazerosas!
+                </p>
+
+                <p style="color: #05314a; font-size: 18px; font-weight: bold; text-align: center; margin-bottom: 25px;">
+                    Boas compras!<br>
+                    Equipe Lovelike Shop
+                </p>
+
+                <!-- Botão -->
+                <div style="text-align: center;">
                     <a href="#"
                         style="background-color: #ff714d; color: white; padding: 15px 40px; border-radius: 25px; text-decoration: none; display: inline-block;">
-                        Ver Produtos Disponíveis
+                        Explorar Agora
                     </a>
-                </div>
-
-                <!-- Mensagem de Suporte -->
-                <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
-                    <p style="color: #707070; font-size: 14px;">
-                        Em caso de dúvidas, entre em contato com nosso suporte.
-                    </p>
                 </div>
             </div>
         </div>
 
         <!-- Footer -->
         <div style="padding: 30px 20px; text-align: center; margin-top: 30px;">
-            <!-- Texto Redes Sociais -->
-            <p style="color: #707070; font-size: 16px; margin-bottom: 20px;">
-                Nos acompanhe nas redes sociais
-            </p>
-
             <!-- Ícones Redes Sociais -->
             <table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
                 <tr>
@@ -141,17 +139,9 @@
                 </tr>
             </table>
 
-            <!-- Linha Divisória -->
-            <div style="width: 100%; height: 1px; background-color: #ddd; margin: 20px 0;"></div>
-
             <!-- Copyright -->
-            <p style="color: #707070; font-size: 14px; margin-bottom: 20px;">
+            <p style="color: #707070; font-size: 14px;">
                 2024 Lovelike Solutions Todos os direitos reservados
-            </p>
-
-            <!-- Texto Adicional -->
-            <p style="color: #707070; font-size: 12px;">
-                Você recebeu esse email por que se cadastrou no Marketplace Lovelike Shop.
             </p>
 
             <!-- Logo -->

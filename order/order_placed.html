@@ -70,7 +70,7 @@
 
             <!-- Card sobreposto -->
             <div class="card"
-                style="position: relative; margin: -60px 20px 0 20px; background: white; border-radius: 20px; padding: 30px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                style="position: relative; margin: -60px 20px 0 20px; background: #f9f9f9; border-radius: 20px; padding: 30px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
                 <p style="color: #05314a; margin-bottom: 10px; font-weight: bold; text-align: center;">Olá
                     {{customer_name}},</p>
                 <h1 class="main-title" style="color: #333; font-size: 24px; margin: 0 0 20px 0; text-align: center;">
@@ -79,7 +79,7 @@
 
                 <!-- Detalhes do Pedido -->
                 <div style="margin: 30px 0; text-align: center;">
-                    <p style="color: #666; margin-bottom: 15px; font-weight: bold;">DETALHES DO PEDIDO</p>
+                    <p style="color: #707070; margin-bottom: 15px; font-weight: bold;">DETALHES DO PEDIDO</p>
                     <div
                         style="background-color: #05314a; color: white; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
                         <p style="margin: 0;">#{{order_number}}</p>
@@ -91,11 +91,11 @@
                     style="display: flex; justify-content: space-between; margin-top: 30px; text-align: center;">
                     <div class="delivery-column" style="flex: 1;">
                         <h3 style="color: #333; margin-bottom: 10px;">ENDEREÇO DE ENTREGA</h3>
-                        <p style="color: #666; margin: 0;">{{delivery_address}}</p>
+                        <p style="color: #707070; margin: 0;">{{delivery_address}}</p>
                     </div>
                     <div class="delivery-column" style="flex: 1;">
                         <h3 style="color: #333; margin-bottom: 10px;">PREVISÃO DE ENTREGA</h3>
-                        <p style="color: #666; margin: 0;">{{estimated_delivery_date}}</p>
+                        <p style="color: #707070; margin: 0;">{{estimated_delivery_date}}</p>
                     </div>
                 </div>
             </div>
@@ -103,7 +103,7 @@
 
         <!-- Seção Única de Produtos e Pagamento -->
         <div
-            style="margin: 30px 20px; background: white; border-radius: 25px; padding: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            style="margin: 30px 20px; background: #f9f9f9; border-radius: 25px; padding: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
             <!-- Título -->
             <h2 style="color: #333; text-align: center; margin-bottom: 25px;">SEUS PRODUTOS</h2>
 
@@ -116,8 +116,8 @@
                     </div>
                     <div style="flex: 1; padding-left: 15px;">
                         <h3 style="color: #05314a; margin: 0 0 5px 0;">{{product_name}}</h3>
-                        <p style="color: #666; margin: 0 0 5px 0;">{{product_description}}</p>
-                        <div style="color: #666;">
+                        <p style="color: #707070; margin: 0 0 5px 0;">{{product_description}}</p>
+                        <div style="color: #707070;">
                             <span>Cor: {{color}}</span><br>
                             <span>Qtd: {{quantity}}</span><br>
                             <span>Preço: R$ {{price}}</span>
@@ -136,20 +136,20 @@
                     <!-- Coluna da Esquerda - Pagamento -->
                     <div style="flex: 1;">
                         <h3 style="color: #333; margin-bottom: 15px;">PAGAMENTO</h3>
-                        <p style="color: #666; margin: 5px 0;">{{payment_method}}</p>
+                        <p style="color: #707070; margin: 5px 0;">{{payment_method}}</p>
                         {{#if card_info}}
-                        <p style="color: #666; margin: 5px 0;">**** **** **** {{card_last_digits}}</p>
+                        <p style="color: #707070; margin: 5px 0;">**** **** **** {{card_last_digits}}</p>
                         {{/if}}
                     </div>
 
                     <!-- Coluna da Direita - Valores -->
                     <div style="flex: 1; text-align: right;">
                         <div style="margin-bottom: 10px;">
-                            <span style="color: #666;">Subtotal:</span>
+                            <span style="color: #707070;">Subtotal:</span>
                             <span style="color: #333; margin-left: 10px;">R$ {{subtotal}}</span>
                         </div>
                         <div style="margin-bottom: 10px;">
-                            <span style="color: #666;">Frete:</span>
+                            <span style="color: #707070;">Frete:</span>
                             <span style="color: #333; margin-left: 10px;">R$ {{shipping_cost}}</span>
                         </div>
                     </div>
@@ -162,7 +162,7 @@
                 </div>
 
                 <!-- Texto de Acompanhamento -->
-                <p style="color: #666; font-size: 14.4px; text-align: center; margin-top: 30px; font-style: italic;">
+                <p style="color: #707070; font-size: 14.4px; text-align: center; margin-top: 30px; font-style: italic;">
                     Acompanhe seu pedido em tempo real pelo app ou site
                 </p>
 
@@ -179,7 +179,7 @@
         <!-- Footer -->
         <div style="padding: 30px 20px; text-align: center; margin-top: 30px;">
             <!-- Texto Redes Sociais -->
-            <p style="color: #666; font-size: 16px; margin-bottom: 20px;">
+            <p style="color: #707070; font-size: 16px; margin-bottom: 20px;">
                 Nos acompanhe nas redes sociais
             </p>
 
@@ -205,12 +205,12 @@
             <div style="width: 100%; height: 1px; background-color: #ddd; margin: 20px 0;"></div>
 
             <!-- Copyright -->
-            <p style="color: #666; font-size: 14px; margin-bottom: 20px;">
+            <p style="color: #707070; font-size: 14px; margin-bottom: 20px;">
                 2024 Lovelike Solutions Todos os direitos reservados
             </p>
 
             <!-- Texto Adicional -->
-            <p style="color: #666; font-size: 12px;">
+            <p style="color: #707070; font-size: 12px;">
                 Você recebeu esse email por que se cadastrou no Marketplace Lovelike Shop.
             </p>
 
